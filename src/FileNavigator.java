@@ -18,4 +18,8 @@ public class FileNavigator {
                 .toList();
     }
 
+    public void remove(String path) {
+        directories.remove(path);
+    }
+
 }
