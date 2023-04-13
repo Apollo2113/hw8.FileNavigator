@@ -10,4 +10,8 @@ public class FileNavigator {
         directories.computeIfAbsent(file.getPath(), k -> new ArrayList<>()).add(file);
     }
 
+    public List<FileData> find(String path) {
+        return directories.get(path);
+    }
+
 }
