@@ -7,6 +7,13 @@ public class FileNavigator {
         directories.computeIfAbsent(file.getPath(), k -> new ArrayList<>()).add(file);
     }
 
+    public void add(FileData file, String path) {
+        if (!file.getPath().equals(path)) {
+            System.out.println("Incorrect path ");
+        }
+        add(file);
+    }
+
     public List<FileData> find(String path) {
         return directories.get(path);
     }
