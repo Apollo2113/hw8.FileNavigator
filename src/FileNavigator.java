@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class FileNavigator {
 
@@ -12,6 +9,13 @@ public class FileNavigator {
 
     public List<FileData> find(String path) {
         return directories.get(path);
+    }
+
+    public List<FileData> filterBySize(int size) {
+        return directories.values().stream()
+                .flatMap(Collection::stream)
+                .filter(e -> e.getSize() < size)
+                .toList();
     }
 
 }
