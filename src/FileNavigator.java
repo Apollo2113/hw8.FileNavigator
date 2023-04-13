@@ -22,4 +22,11 @@ public class FileNavigator {
         directories.remove(path);
     }
 
+    public List<FileData> sortBySize() {
+        return directories.values().stream()
+                .flatMap(Collection::stream)
+                .sorted(Comparator.comparingInt(FileData::getSize))
+                .toList();
+    }
+
 }
