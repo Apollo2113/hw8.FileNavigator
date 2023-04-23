@@ -11,9 +11,6 @@ public class FileData {
         this.size = size;
         this.path = path;
     }
-    public String getName() {
-        return name;
-    }
 
     public int getSize() {
         return size;
